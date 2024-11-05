@@ -18,6 +18,9 @@ end_game = False
 
 
 def button_press(num):
+    """
+    this function is where the player input is processed
+    """
     char = ""
     global curr_player
     global end_game
@@ -28,6 +31,9 @@ def button_press(num):
         char = player2
 
     if not end_game:
+        """
+        the block the player clicked has to be blank
+        """
         if num == 1 and button1.cget('text') == tic_char:
             button1.config(text=char)
         if num == 2 and button2.cget('text') == tic_char:
@@ -55,6 +61,10 @@ def button_press(num):
 
 
 def check_win():
+    """
+    Iterates through all the buttons to check if the any of the players won. If won, it stops the game 
+    and declares the winner!
+    """
     global end_game
     # horizontal check
     if button1.cget("text") == button2.cget("text") == button3.cget("text") and button1.cget("text") != tic_char:
